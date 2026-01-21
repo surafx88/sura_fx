@@ -1,59 +1,52 @@
-import { motion } from "framer-motion";
-import { TrendingUp, BookOpen, BarChart3, Users } from "lucide-react";
+import "./App.css";
 
-export default function App() {
+function App() {
   return (
-    <div className="min-h-screen bg-black text-white">
-      {/* Header */}
-      <header className="p-6 border-b border-gray-800 flex justify-between items-center">
-        <h1 className="text-2xl font-bold text-green-400">SURA FX</h1>
-        <nav className="space-x-6 text-sm">
-          <a href="#" className="hover:text-green-400">Home</a>
-          <a href="#" className="hover:text-green-400">Education</a>
-          <a href="#" className="hover:text-green-400">Blog</a>
-          <a href="#" className="hover:text-green-400">Dashboard</a>
-        </nav>
-      </header>
+    <div>
+      {/* NAVBAR */}
+      <nav className="navbar">
+        <h1 className="logo">SURA FX</h1>
+        <ul className="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#dashboard">Dashboard</a></li>
+        </ul>
+      </nav>
 
-      {/* Hero */}
-      <section className="p-12 text-center">
-        <motion.h2
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl font-extrabold mb-4"
-        >
-          Trade Smart. Trade Disciplined.
-        </motion.h2>
-        <p className="text-gray-400 max-w-xl mx-auto">
-          Professional ICT & CRT-based trading education, market insights, and performance tracking.
-        </p>
+      {/* HOME */}
+<section id="home" className="section hero">
+  <h2 className="hero-title">Trade Smart. Trade Disciplined.</h2>
+  <p className="hero-subtitle">
+    A professional trading ecosystem focused on ICT & CRT concepts,
+    execution discipline, and performance tracking.
+  </p>
+  <div className="hero-actions">
+    <a href="#education" className="btn primary">Start Learning</a>
+    <a href="#blog" className="btn secondary">Market Insights</a>
+  </div>
+</section>
+
+
+      {/* EDUCATION */}
+      <section id="education" className="section">
+        <h2>Education</h2>
+        <p>Structured ICT & CRT concepts. Launching soon.</p>
       </section>
 
-      {/* Features */}
-      <section className="grid grid-cols-1 md:grid-cols-4 gap-6 px-12 pb-16">
-        {[
-          { icon: TrendingUp, title: "Market Insights" },
-          { icon: BookOpen, title: "Education" },
-          { icon: BarChart3, title: "Performance" },
-          { icon: Users, title: "Community" },
-        ].map((item, i) => (
-          <motion.div
-            key={i}
-            whileHover={{ scale: 1.05 }}
-            className="bg-gray-900 p-6 rounded-2xl shadow-lg"
-          >
-            <item.icon className="text-green-400 mb-4" size={32} />
-            <h3 className="font-semibold text-lg">{item.title}</h3>
-            <p className="text-sm text-gray-400 mt-2">Coming soon</p>
-          </motion.div>
-        ))}
+      {/* BLOG */}
+      <section id="blog" className="section">
+        <h2>Blog</h2>
+        <p>Market insights, trade breakdowns, and psychology.</p>
       </section>
 
-      {/* Footer */}
-      <footer className="border-t border-gray-800 p-6 text-center text-sm text-gray-500">
-        © {new Date().getFullYear()} SURA FX. All rights reserved.
-      </footer>
+      {/* DASHBOARD */}
+      <section id="dashboard" className="section">
+        <h2>Dashboard</h2>
+        <p>Performance tracking and analytics. Coming soon.</p>
+      </section>
     </div>
   );
 }
+
+export default App;
